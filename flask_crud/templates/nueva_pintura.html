@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block titulo %}Nueva Pintura{% endblock %}
+{% block contenido %}
+<nav  class="  navbar navbar-expand-lg navbar-dark bg-warning d-flex justify-content-end ">
+    <a class="p-3"  href="/panel">Volver al panel</a> 
+    <a  class=" btn btn-danger " href="/logout">SALIR</a>
+</nav>
+
+<div class="container mt-5">
+    <h1>Agregar una pintura</h1>
+
+    <form action="/procesar_pintura" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+            <input required name='titulo' type="text" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo: La maravilla cosmica">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+            <textarea required  name="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Precio</label>
+            <input required name='precio' type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+          <div class="row">
+            <div class="col-2">
+                <button type="submit" class="btn btn-success">Agregar Pintura</button>
+            </div>
+          </div>
+          
+    </form>
+</div>
+
+
+{% endblock %}

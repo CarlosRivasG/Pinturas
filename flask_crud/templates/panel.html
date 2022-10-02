@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block titulo %}Panel de pinturas{% endblock %}
+{% block contenido %}
+
+
+{% include '_menu.html' %}
+    <div class="container mt-5 ">
+        <h1>Pinturas</h1>
+    </div>
+  
+    <div class="container mt-5">
+        {% for pintura in pinturas  %}
+        <div class='alert alert-primary'>
+            <p>
+                <a href="/pintura/{{pintura.usuario_creador}}">{{pintura.titulo}}</a> agregado por {{pintura.nombre_usuario}} 
+                {% if session['usuario_creador']== pintura.usuario_creador%}    
+            <a href="/eliminar/pintura/{{pintura.id}}">eliminar</a> | <a href="/pintura/{{pintura.id}}/editar">editar</a>   
+            {% endif %}
+        </p>
+        </div>    
+        {% endfor %}  
+    </div>
+
+
+{% endblock %}
