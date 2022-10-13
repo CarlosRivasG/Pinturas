@@ -42,6 +42,7 @@ class Pintura(ModeloBase):
         results = connectToMySQL(os.environ.get("BASEDATOS_NOMBRE")).query_db(query, data)
         print(results)
         return cls(results[0])
+    
     @classmethod
     def get_by_id3(cls, id):
         query = f"SELECT pinturas.* FROM pinturas WHERE pinturas.id = %(id)s"

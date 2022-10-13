@@ -75,8 +75,6 @@ class Usuario(ModeloBase):
     def update(cls,data):
         query = f" UPDATE `usuarios` SET `nombre` =  %(nombre)s, `apellido` = %(apellido)s, `email` = %(email)s, `password` = %(password)s WHERE `id` =  %(id)s;"
         
-    
-
         resultado = connectToMySQL(os.environ.get("BASEDATOS_NOMBRE")).query_db(query, data)
         print("RESULTADO: ", resultado)
         return resultado
